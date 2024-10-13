@@ -4,7 +4,11 @@
                         <div class="pcoded-inner-navbar main-menu">
                             <div class="">
                                 <div class="main-menu-header">
-                                    <img class="img-40 img-radius" src="{{Asset('Asset/backend/images/avatar-4.jpg')}}" alt="User-Profile-Image">
+                                <img class="profile-user-img img-fluid img-circle"
+                                 src="{{Asset('storage')}}/{{auth()->user()->profile_photo_path}}"
+                                 alt="User profile picture"
+                                 style="width: 45px; height: 45px;">
+
                                     <div class="user-details">
                                     <a href="{{route('profile')}}" class="d-block">{{auth()->user()->email}}</a> 
                                     <a href="{{route('profile')}}" class="d-block">| {{auth()->user()->name}}</a>
@@ -15,8 +19,8 @@
                                 <div class="main-menu-content">
                                     <ul>
                                         <li class="more-details">
-                                            <a href="#"><i class="ti-user"></i>View Profile</a>
-                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <a href="{{route('profile')}}"><i class="ti-user"></i>View Profile</a>
+                                            <a href="{{route('profile')}}"><i class="ti-settings"></i>Settings</a>
                                             <form method="POST" action="{{route('logout')}}">
                                             @csrf
                                             <button type="submin"class="btn btn-danger">Logout</button>

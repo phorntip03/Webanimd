@@ -33,22 +33,34 @@
             <!-- Card body -->
             <div class="card-body p-0">
                 <!-- Adjusted table width and alignment -->
-                <table class="table table-striped projects" style="width: 100%; text-align: center;"> <!-- เปลี่ยนให้ข้อความชิดกลาง -->
+                <table class="table table-striped projects"> <!-- เปลี่ยนให้ข้อความชิดกลาง -->
                     <thead>
-                        <tr>
-                            <th style="width: 5%; padding: 10px;">#</th> <!-- เพิ่ม padding -->
-                            <th style="width: 25%; padding: 10px;">Name</th> <!-- เพิ่ม padding -->
-                            <th style="width: 25%; padding: 10px;">Email</th> <!-- เพิ่ม padding -->
-                            <th style="width: 15%; padding: 10px;">Photo</th> <!-- เพิ่ม padding -->
-                            <th style="width: 20%; padding: 10px;" class="text-center">Manage</th> <!-- เพิ่ม padding -->
-                        </tr>
+                    <tr>
+                      <th style="width: 40%">
+                          #
+                      </th>
+                      <th style="width: 40%">
+                           Name
+                      </th>
+                      <th style="width: 35%">
+                          Email
+                      </th>
+                      <th>
+                          Photo
+                      </th>
+                      <th style="width: 20%" class="text-center">
+                          Manage
+                      </th>
+                      <th style="width: 30%">
+                      </th>
+                  </tr>
                     </thead>
                     <tbody>
                         @foreach($data as $item)
                         <tr>
-                            <td style="padding: 10px;">{{$item->id}}</td> <!-- เพิ่ม padding -->
-                            <td style="padding: 10px;">{{$item->name}}</td> <!-- เพิ่ม padding -->
-                            <td style="padding: 10px;">{{$item->email}}</td> <!-- เพิ่ม padding -->
+                            <td style="padding: 15px;">{{$item->id}}</td> <!-- เพิ่ม padding -->
+                            <td style="padding: 15px;">{{$item->name}}</td> <!-- เพิ่ม padding -->
+                            <td style="padding: 5px;">{{$item->email}}</td> <!-- เพิ่ม padding -->
                             <td style="padding: 10px;">
                                 <!-- Adjusted image size to smaller -->
                                 <img alt="Avatar" class="table-avatar" src="{{asset('storage')}}/{{$item->profile_photo_path}}" style="width: 30px; height: 30px;">
